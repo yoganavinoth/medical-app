@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --primary: 263 100% 64%;  /* #8247ff */
+  --primary-foreground: 211 100% 99%;
+  --secondary: 0 90% 58%;   /* #f53735 */
+  --secondary-foreground: 24 9.8% 10%;
+  --accent: 45 95% 53%;     /* #f9ba17 */
+  --accent-foreground: 24 9.8% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 263 100% 64%;     /* #8247ff */
+  --radius: 0.5rem;
+  
+  /* Chart colors */
+  --chart-1: 263 100% 64%;  /* #8247ff */
+  --chart-2: 0 90% 58%;     /* #f53735 */
+  --chart-3: 45 95% 53%;    /* #f9ba17 */
+  --chart-4: 0 0% 1%;       /* #050503 */
+  --chart-5: 233 96% 65%;   /* #4a7bff */
+  
+  /* Sidebar colors */
+  --sidebar-background: 0 0% 100%;
+  --sidebar-foreground: 20 14.3% 4.1%;
+  --sidebar-primary: 263 100% 64%;
+  --sidebar-primary-foreground: 211 100% 99%;
+  --sidebar-accent: 45 95% 53%;
+  --sidebar-accent-foreground: 24 9.8% 10%;
+  --sidebar-border: 20 5.9% 90%;
+  --sidebar-ring: 263 100% 64%;
+}
+
+.dark {
+  --background: 0 0% 1%;    /* #050503 */
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 0 0% 1%;       /* #050503 */
+  --popover-foreground: 0 0% 98%;
+  --card: 0 0% 1%;          /* #050503 */
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 263 100% 64%;  /* #8247ff */
+  --primary-foreground: 211 100% 99%;
+  --secondary: 0 90% 58%;   /* #f53735 */
+  --secondary-foreground: 0 0% 98%;
+  --accent: 45 95% 53%;     /* #f9ba17 */
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 263 100% 64%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-sm;
+  }
+
+  /* Chat styling */
+  .chat-bubble {
+    @apply relative rounded-2xl p-4 mb-2.5 max-w-[75%];
+  }
+  
+  .chat-bubble.user {
+    @apply bg-primary text-white rounded-br-none ml-auto;
+  }
+  
+  .chat-bubble.ai {
+    @apply bg-gray-100 text-gray-800 rounded-bl-none;
+  }
+}
